@@ -13,10 +13,10 @@ A binary called `ytmp` is provided
 ```
 Usage:
     ytmp --help
-    ytmp [ options ] [ [--play] [--mix] [--radio] ] [--] string
-    ytmp [ options ] --search [--] string...
-    ytmp [ options ] --id=id | --id [--] id
-    ytmp [ options ] --url=url | --url [--] url
+    ytmp [ options ] [ [--play] [--mix] [--radio] ] [--] [string]
+    ytmp [ options ] --search [--] [string...]
+    ytmp [ options ] --id=id | --id [--] [id]
+    ytmp [ options ] --url=url | --url [--] [url]
 
 Behaviour control:
     -x, --play      Play the selected playlist and/or video

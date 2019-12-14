@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+const readline = require('readline')
 const minimist = require('minimist')
 const ytmp = require('.')
 
@@ -66,8 +67,22 @@ Developer options:
     -v, --verbose  Log to stderr
 `)
 } else {
-	ytmp(argv.id || argv._.join(" "), argv).then(
-		(info) => info ? console.error("Done. Last video: %s", info.title) : console.error("Done."),
-		(e) => console.error("Whoops main() exited: %O", e)
-	)
+	const string = argv.id || argv._.join(" ")
+	if (!string) {
+		const rl = readline.createInterface({
+			input: process.stdin,
+			output: process.stderr,
+		})
+		rl.question("Which video to play? ", string => {
+			rl.close()
+			main(string)
+		})
+	} else main(string)
+
+	function main(string) {
+		ytmp(string, argv).then(
+			(info) => info ? console.error("Done. Last video: %s", info.title) : console.error("Done."),
+			(e) => console.error("Whoops main() exited: %O", e)
+		)
+	}
 }
