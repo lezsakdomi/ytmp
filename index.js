@@ -12,16 +12,16 @@ async function main(str, options = {}) {
 	if (!search) {
 
 		if (ytpl.validateURL(str)) {
-			let info = play(str)
-			if (mix) info = playMix(info)
-			if (radio) info = playRadio(info)
+			let info = play(str, options)
+			if (mix) info = playMix(info, options)
+			if (radio) info = playRadio(info, options)
 			return info
 		}
 
 		if (ytdl.validateURL(str) || ytdl.validateID(str)) {
-			let info = play(str)
-			if (mix) info = playMix(info)
-			if (radio || def) info = playRadio(info)
+			let info = play(str, options)
+			if (mix) info = playMix(info, options)
+			if (radio || def) info = playRadio(info, options)
 			return info
 		}
 
@@ -38,16 +38,16 @@ async function main(str, options = {}) {
 		// todo interactive selection
 
 		if (ytpl.validateURL(link)) {
-			let info = play(link)
-			if (mix) info = playMix(info)
-			if (radio || def) info = playRadio(play(link))
+			let info = play(link, options)
+			if (mix) info = playMix(info, options)
+			if (radio || def) info = playRadio(info, options)
 			return info
 		}
 
 		if (ytdl.validateURL(link)) {
-			let info = play(link)
-			if (mix || def) info = playMix(info)
-			if (radio || def) info = playRadio(info)
+			let info = play(link, options)
+			if (mix || def) info = playMix(info, options)
+			if (radio || def) info = playRadio(info, options)
 			return info
 		}
 
