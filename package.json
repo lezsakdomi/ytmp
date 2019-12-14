@@ -6,7 +6,7 @@
   "repository": "github:lezsakdomi/ytmp",
   "author": "Domonkos Lezsák <lezsakdomi1@gmail.com>",
   "license": "MIT",
-  "keywords": ["youtube", "music", "plyer"],
+  "keywords": ["youtube", "music", "cli"],
   "bugs": "https://github.com/lezsakdomi/ytmp/issues",
   "files": [
     "index.js",
