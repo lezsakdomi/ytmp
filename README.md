@@ -1,14 +1,14 @@
-= ytmp
+# ytmp
 A lightweight YouTube-based music player
 
-== Setup
+## Setup
 1. Install mpv on your OS (`sudo apt-get install mpv`, `sudo pacman -S mpv`, `sudo emerge mpv`).
    Sorry, `mpv` is an external dependency as of now. You can skip this step if
    you are into providing your own https-capable video player (like VLC or
    mplayer) using the `-p` flag
 2. Run `yarn global add ytmp`
 
-== CLI
+## CLI
 A binary called `ytmp` is provided
 ```
 Usage:
@@ -52,7 +52,7 @@ Developer options:
     -v, --verbose  Log to stderr
 ```
 
-== API
+## API
 ```javascript
 const ytmp = require(ytmp)
 
