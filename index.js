@@ -120,6 +120,7 @@ async function playRadio(id, options = {}) {
 
 	return playRadioRecursive(info)
 }
+module.exports.playRadio = playRadio
 
 async function playRadioRecursive(info, options = {}) {
 	for (let i of info['related_videos']
