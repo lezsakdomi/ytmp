@@ -9,7 +9,7 @@ const argv = minimist(process.argv.slice(2), {
 		"play", "radio", "mix",
 		"search",
 		"audio", "video",
-		"quiet", "verbose",
+		"silent", "verbose",
 	],
 	string: [
 		"id",
@@ -21,7 +21,7 @@ const argv = minimist(process.argv.slice(2), {
 		"id": "url", "search": "s", "id": "i", "url": "u",
 		"audio": "a", "video": "v",
 		"player": "p",
-		"quiet": "q", "verbose": "v",
+		"silent": "S", "verbose": "V",
 	},
 })
 
@@ -63,8 +63,8 @@ Developer options:
                    default. A recommended alternative is mplayer or ffplay.
                    Should be able to play http streams.
     --saveinfo [f] Save latest video info, optionally to the given file
-    --quiet        Don't log to stdout
-    -v, --verbose  Log to stderr
+    -S, --silent   Don't log to stdout
+    -V, --verbose  Log to stderr
 `)
 } else {
 	const string = argv.id || argv._.join(" ")

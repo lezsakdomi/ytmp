@@ -60,7 +60,7 @@ module.exports = main
 
 async function play(id, options = {}) {
 	const {audio = false, video = false, player = 'mpv',
-		saveinfo = false, quiet = false, verbose = false} = options
+		saveinfo = false, silent = false, verbose = false} = options
 
 	if (typeof id === 'string' && ytpl.validateURL(id)) {
 		const playlist = await ytpl(id)
@@ -69,7 +69,7 @@ async function play(id, options = {}) {
 
 		let info
 		for (let item of playlist.items) {
-			info = await play(item.id)
+			info = await play(item.id, options)
 		}
 
 		if (verbose) console.error("End of playlist")
@@ -93,7 +93,7 @@ async function play(id, options = {}) {
 
 		const url = format.url
 
-		if (!quiet) console.log(info.title)
+		if (!silent) console.log(info.title)
 
 		return new Promise((resolve, reject) => {
 			const playerProcess = spawn(player, [url], {stdio: 'inherit'})
@@ -123,6 +123,7 @@ async function playRadio(id, options = {}) {
 module.exports.playRadio = playRadio
 
 async function playRadioRecursive(info, options = {}) {
+	info = await info
 	for (let i of info['related_videos']
 		.map(i => {
 			let {view_count} = i
