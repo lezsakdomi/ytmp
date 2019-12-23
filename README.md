@@ -9,7 +9,7 @@ A lightweight YouTube-based music player
 2. Run `yarn global add ytmp`
 
 ## CLI
-A binary called `ytmp` is provided
+A binary called `ytmp` is provided.
 ```
 Usage:
     ytmp --help
@@ -59,16 +59,63 @@ const ytmp = require(ytmp)
 let info = await ytmp(url_or_id_or_searchstring, options)
 info = await ytmp.play(url_or_id_or_searchstring_or_info, options)
 info = await ytmp.playMix(info || "Developers" || "KMU0tzLwhbE", {audio: true, video: false})
-info = ytmp.playRadio(info || "Oxygene COMPLETE" || "PLCFC37B95C9159ACC", {player: "C:\Program Files\vlc\vlc.exe"})
+info = ytmp.playRadio(info || "Oxygene COMPLETE" || "PLCFC37B95C9159ACC", {player: "C:\\Program Files\\vlc\\vlc.exe"})
 ```
 
-The main exported function is _intelligent_, i.e. does not accept an
+### main function
+
+The exported function is intelligent, i.e. does not accept an
 _info-object_, but accepts a search string tries to guess what the user wants.
 
-Every function returns an info promise and accepts an URL or an ID indicating a
-video, a playlist or a channel or an info object or promise returned from a
-previous call. Passing the unresolved promise makes content preloading possible.
+First argument:
+- url (`String`)
+- id (`String`)
+- search string (`String`)
 
-Every function accepts an options objects as a second arguments which controls
-its behaviour. Currently undocumented, accepts the CLI arguments, look in the
-source code for usage.
+Second argument (optional):
+- `Options`
+
+Returns:
+- [`Promise<ytdl.videoInfo>`](https://github.com/fent/node-ytdl-core/blob/master/typings/index.d.ts)
+  This promise is resolved after the last video is played.
+  By default the program tries playing an infinite stream thus the promise never resolves.
+
+### Methods
+
+List of exported methods:
+- `ytmp.play`
+- `ytmp.playRadio`
+- `ytmp.playMix`
+
+First argument:
+- url (`String`)
+- id (`String`)
+- [`Promise<ytdl.videoInfo>`](https://github.com/fent/node-ytdl-core/blob/master/typings/index.d.ts)
+- [`ytdl.videoInfo`](https://github.com/fent/node-ytdl-core/blob/master/typings/index.d.ts)
+
+You are encouraged to pass an _info-promise_ because that
+makes preloading possible in future versions.
+
+Second argument (optional):
+- `Options`
+
+Returns:
+Returns:
+- [`Promise<ytdl.videoInfo>`](https://github.com/fent/node-ytdl-core/blob/master/typings/index.d.ts)
+  This promise is resolved after the last video is played. (In case of playlist or mix)
+
+### Options
+Not really documented, but generally speaking the keys could be the arguments (see [CLI usage](#CLI) and/or the source code).
+
+## Buzzwords
+
+### Video
+It could be a YouTube video, a YouTube playlist or even a channel.
+
+### Radio
+An infinite stream of videos, each one similar to the previous ones.
+Similar to the YouTube AutoPlay feature except this is better.
+
+### Mix
+A list of recommended videos for a specific video. YouTube does the same
+except it customizes the priority of the videos based on the user's habits.
