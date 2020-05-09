@@ -2,53 +2,54 @@
 # yarn lockfile v1
 
 
-html-entities@^1.1.3:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/html-entities/-/html-entities-1.2.1.tgz#0df29351f0721163515dfb9e5543e5f6eed5162f"
-  integrity sha1-DfKTUfByEWNRXfueVUPl9u7VFi8=
+html-entities@^1.1.3, html-entities@^1.3.1:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/html-entities/-/html-entities-1.3.1.tgz#fb9a1a4b5b14c5daba82d3e34c6ae4fe701a0e44"
+  integrity sha512-rhE/4Z3hIhzHAUKbW8jVcCyuT5oJCXXqhN/6mXXVCpzTmvJnoH2HL/bt3EZ6p55jbFJBeAe1ZNpL5BugLujxNA==
 
 m3u8stream@^0.6.3:
-  version "0.6.3"
-  resolved "https://registry.yarnpkg.com/m3u8stream/-/m3u8stream-0.6.3.tgz#f3dc8c25a96a68640903cab47450b6a5ac36e585"
-  integrity sha512-HNUco8ef9kOvMRH7tYxJqbk9IuRA+AuZG8a/dQwqI+jfuEs1/DUaPbfTIlUDB4JmTZNkTOZHvZI5TvnQGR8nKA==
+  version "0.6.5"
+  resolved "https://registry.yarnpkg.com/m3u8stream/-/m3u8stream-0.6.5.tgz#a41713cb7144f8fe1eb944d32a8848be8cb2c951"
+  integrity sha512-QZCzhcfUliZfsOboi68QkNcMejPKTEhxE+s1TApvHubDeR8ythm4ViWuYFqgUwZeoHe8q0nsPxOvA3lQvdSzyg==
   dependencies:
     miniget "^1.6.1"
     sax "^1.2.4"
 
-miniget@^1.6.0, miniget@^1.6.1:
-  version "1.6.1"
-  resolved "https://registry.yarnpkg.com/miniget/-/miniget-1.6.1.tgz#f1ae08a34e06a2b1c3ace568384ea0def2fe5813"
-  integrity sha512-I5oBwZmcaOuJrjQn7lpS29HM+aAZDbzKbX5ouxVyhFYdg6fA6YKOTwOCgzZQwlHuMek3FlCxz6eNrd4pOXbwOA==
+miniget@^1.6.1, miniget@^1.7.0:
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/miniget/-/miniget-1.7.0.tgz#a29eb79ebff479e9efafd271616981c603987875"
+  integrity sha512-yrgaDSMRzrfYTkudB4Y6xK8pCb7oAH2bvfv6iPY2m6CedZfs9yK4b/ofh0Vzv08hCYXH/HHkoS8an6fkWtOAQA==
 
-minimist@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.0.tgz#a35008b20f41383eec1fb914f4cd5df79a264284"
-  integrity sha1-o1AIsg9BOD7sH7kU9M1d95omQoQ=
+minimist@^1.2.5:
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.5.tgz#67d66014b66a6a8aaa0c083c5fd58df4e4e97602"
+  integrity sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==
 
 sax@^1.1.3, sax@^1.2.4:
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
   integrity sha512-NqVDv9TpANUjFm0N8uM5GxL36UgKi9/atZw+x7YFnQ8ckwFGKrl4xX4yWtrey3UJm5nP1kUbnYgLopqWNSRhWw==
 
-ytdl-core@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/ytdl-core/-/ytdl-core-1.0.3.tgz#8135565462c61204a596cfb4785f909b16783e8a"
-  integrity sha512-sBOVokjrAigKTEn248MJ+JpS5ifay/vBzYGMDeZhG61xmgthev6yHXBgEgm+M8ySDQXXVjOTmUtY3GHbX988KA==
+ytdl-core@^2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/ytdl-core/-/ytdl-core-2.1.2.tgz#64003e5ac1907df3e92cf36771224811bd81698f"
+  integrity sha512-/tOT9Pka6nX+LuvzNLBU8AbVHe8XELn3aZ69mvCxzvwO/ty9k8cRvF6jXqti7l5M+0hf+UPpP9jYPSAFAuoBUA==
   dependencies:
-    html-entities "^1.1.3"
+    html-entities "^1.3.1"
     m3u8stream "^0.6.3"
-    miniget "^1.6.0"
+    miniget "^1.7.0"
     sax "^1.1.3"
 
-ytpl@lezsakdomi/node-ytpl:
-  version "0.1.18"
-  resolved "https://codeload.github.com/lezsakdomi/node-ytpl/tar.gz/915835a7088c05393062c1d18999af235be930c0"
+ytpl@^0.1.21:
+  version "0.1.21"
+  resolved "https://registry.yarnpkg.com/ytpl/-/ytpl-0.1.21.tgz#1400c82de872648008db53f8d440d1d4babd2342"
+  integrity sha512-TT8t4eSqkjP8Pvlxl7wgQ6MCCEEdMgJ8rS1gOdkW7GM7A7tuXmsxNK+VSt7HjKVH/iJ5f0S3AfOYczZdx2WExw==
   dependencies:
     html-entities "^1.1.3"
 
-ytsr@^0.1.10:
-  version "0.1.10"
-  resolved "https://registry.yarnpkg.com/ytsr/-/ytsr-0.1.10.tgz#1ef8821e953290b24460825951ebe086bae382b9"
-  integrity sha512-9wq0TiFejj6T5t9WXx/7Uw7Pix6vtXq3nd7BbPvz3BwUjJ4rdW4maylj1/sW+AUaSNgZgVbVngH/Y1a7V1kzsA==
+ytsr@^0.1.13:
+  version "0.1.13"
+  resolved "https://registry.yarnpkg.com/ytsr/-/ytsr-0.1.13.tgz#810e7c00b9a21958364a312565c574a606a36f81"
+  integrity sha512-cZKwLlVkWo/K03/z8acGoRupzHjkTsl/ohrZtFjNjjKu0/x012YMvmoLd5XPhj0H8YQ6RskMkx3ikIXEhshhsg==
   dependencies:
     html-entities "^1.1.3"
